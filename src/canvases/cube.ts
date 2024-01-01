@@ -5,7 +5,6 @@ import { CubeData } from '../models/cube';
 import shader from '../shaders/cube.wgsl';
 const createCamera = require('3d-view-controls');
 
-
 export const Cube = async (gpu: GPU, device: GPUDevice) => {
     const canvas = await initCanvas('canvasWebgpu', device);
     

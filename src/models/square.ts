@@ -1,10 +1,10 @@
 export const SquareVerteces = () =>{
     return new Float32Array([
-        -0.8, -0.8,  // vertex a
-        0.8, -0.8,  // vertex b
-        -0.8,  0.8,  // vertex d
-        -0.8,  0.8,  // vertex d
-        0.8, -0.8,  // vertex b
-        0.8,  0.8,  // vertex c
+        -1, -1,  // vertex a
+         1, -1,  // vertex b
+        -1,  1,  // vertex d
+        -1,  1,  // vertex d
+         1, -1,  // vertex b
+         1,  1,  // vertex c
     ]);
 }
