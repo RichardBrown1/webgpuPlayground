@@ -12,13 +12,13 @@ export const Mandlebrot = async (gpu: GPU, device: GPUDevice) => {
 
     zoom[0] = 1;
     viewOffset[0] = -0.5;
-    canvas.canvas.onclick = function(e) {
-        var rect = canvas.canvas.getBoundingClientRect();
-        viewOffset[0] = (e.clientX - rect.left)/canvas.canvas.width - 0.5; //x position within the element.
-        viewOffset[1] = (e.clientY - rect.top)/canvas.canvas.height;  //y position within the element.
-        zoom[0] *= 2;
-        console.log("Left? : " + viewOffset[0] + " ; Top? : " + viewOffset[1] + ".");
-    };
+    // canvas.canvas.onclick = function(e) {
+    //     var rect = canvas.canvas.getBoundingClientRect();
+    //     viewOffset[0] = (e.clientX - rect.left)/canvas.canvas.width - 0.5; //x position within the element.
+    //     viewOffset[1] = (e.clientY - rect.top)/canvas.canvas.height;  //y position within the element.
+    //     zoom[0] *= 2;
+    //     console.log("Left? : " + viewOffset[0] + " ; Top? : " + viewOffset[1] + ".");
+    // };
 
     //render setup
     const vertexData = SquareVerteces();
