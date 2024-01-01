@@ -2,6 +2,7 @@ import { ColouredSquare } from './canvases/colouredSquare';
 import { Mandlebrot } from './canvases/mandlebrot';
 import { PspWaves } from './canvases/pspWaves';
 import { Cube } from './canvases/cube';
+import { RayTrace } from './canvases/rayTrace';
 
 import { CONSTANTS } from './constants';
 import { initCanvasResizeListener, initGPU, setCanvasHeader } from './helper';
@@ -29,6 +30,10 @@ function mandlebrotListener() {
     Mandlebrot(gpu, device);
 }
 
+function rayTraceListener() {
+    RayTrace(gpu, device);
+}
+
 function onHashChange() {
     switch (currentHash) {
         case CONSTANTS.HASHES.COLOURED_SQUARE:
@@ -39,6 +44,9 @@ function onHashChange() {
             break;
         case CONSTANTS.HASHES.MANDLEBROT:
             window.removeEventListener(currentHash, mandlebrotListener);
+            break;
+        case CONSTANTS.HASHES.RAYTRACE:
+            window.removeEventListener(currentHash, rayTraceListener);
             break;
         case CONSTANTS.HASHES.CUBE:
             window.removeEventListener(currentHash, cubeListener);
@@ -65,6 +73,11 @@ function onHashChange() {
             setCanvasHeader(CONSTANTS.HEADERS.MANDLEBROT);
             window.addEventListener('resize', mandlebrotListener);
             Mandlebrot(gpu, device);
+            break;
+        case CONSTANTS.HASHES.RAYTRACE:
+            setCanvasHeader(CONSTANTS.HEADERS.RAYTRACE);
+            window.addEventListener('resize', rayTraceListener);
+            RayTrace(gpu, device);
             break;
         case CONSTANTS.HASHES.CUBE:
             setCanvasHeader(CONSTANTS.HEADERS.CUBE);
