@@ -21,6 +21,9 @@ fn fs_main(@builtin(position) pos: vec4<f32>) -> @location(0) vec4<f32> {
     // -1 to +1 on each axis.
     var pixelTarget2D = (pos.xy/resolution) * 2.0f - 1.0f;
 
+    //take abs value so we can verify there are negative values in the lower left
+    pixelTarget2D = abs(pixelTarget2D);
+
     // show percentage as red and green
     return  vec4f(pixelTarget2D, 0.0f, 1.0f);
 }
